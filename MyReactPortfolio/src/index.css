@@ -4,24 +4,40 @@
   box-sizing: border-box;
 }
 body {
+  min-height: 100vh;
   background-color: black;
-  overflow: hidden;
   font-family: "Poppins", sans-serif;
 }
-.logo {
-  width: 20%;
+nav {
+  position: sticky;
 }
 nav .list-container {
   width: 100%;
   list-style: none;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+}
+nav li {
+  display: flex;
+  align-items: center;
+}
+nav li {
+  height: 50px;
 }
 nav a {
   height: 100%;
   text-decoration: none;
   padding: 30px;
   color: #b81fb0;
+}
+nav li:first-child {
+  margin-right: auto;
+  position: relative;
+}
+.logo {
+  width: 200px;
+  padding-left: 20px;
 }
 .contact-btn {
   background-color: transparent;
@@ -42,12 +58,12 @@ nav a {
   justify-content: space-between;
 }
 .h-container {
-  width: 50%;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
   top: 5%;
-  left: 27%;
+  left: 25%;
   position: absolute;
 }
 .headline {
@@ -78,5 +94,91 @@ nav a {
 .project-btn:hover {
   background-color: #b81fb0;
 }
-.call-btn:hover:before {
+@media (max-width: 768px) {
+  .logo {
+    width: 60%;
+  }
+  .h-container {
+    width: 80%;
+    position: absolute;
+    left: 14%;
+  }
+  .headline {
+    font-size: 4rem;
+  }
+}
+.abt-container {
+  display: inline-flex;
+}
+.left .portfolio-image {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease-in-out;
+}
+.left .portfolio-image:hover {
+  filter: grayscale(0%);
+}
+.portfolio-image {
+  width: 50%;
+}
+.right {
+  width: 50%;
+  color: white;
+  display: inline-flex;
+  font-family: monospace;
+  position: absolute;
+  left: 40%;
+  top: 15%;
+}
+.right .static-text {
+  color: white;
+  font-size: 3rem;
+}
+.right .dynamic-texts {
+  font-size: 3rem;
+  line-height: 60px;
+  height: 60px;
+  overflow: hidden;
+}
+.dynamic-texts li {
+  list-style: none;
+  margin-left: 0.8em;
+  color: #b81fb0;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(5) infinite;
+}
+
+@keyframes slide {
+  100% {
+    top: -305px;
+  }
+}
+.dynamic-texts li::after {
+  content: "";
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-left: 3px solid #b81fb0;
+  animation: typing 3s steps(10) infinite;
+  background-color: black;
+}
+
+@keyframes typing {
+  40%,
+  60% {
+    left: calc(100% + 30px);
+  }
+
+  100% {
+    left: 0;
+  }
+}
+.paragraph-container {
+  font-size: 1.3rem;
+  line-height: 30px;
+  position: absolute;
+  top: 100%;
+}
+@media (max-width: 768px) {
 }
