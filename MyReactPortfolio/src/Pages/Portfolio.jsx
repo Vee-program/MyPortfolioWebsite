@@ -1,7 +1,7 @@
 import React from "react";
 
-const Skills = () => {
+const Portfolio = () => {
   return <div></div>;
 };
 
-export default Skills;
+export default Portfolio;
