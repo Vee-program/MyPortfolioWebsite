@@ -24,7 +24,7 @@ body {
   align-items: center;
   color: black;
   text-align: center;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 nav .list-container {
   width: 100%;
@@ -74,8 +74,10 @@ nav li:first-child {
   background-color: white;
 }
 .hero-container {
+  z-index: 100;
   width: 100%;
   height: 100vh;
+  padding: 1.5em;
 }
 .hero-image {
   width: 100%;
@@ -87,48 +89,36 @@ nav li:first-child {
   justify-content: center;
   align-items: center;
 }
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: perspective(1000px) translate(-50%, -50%) skewY(15deg);
-  transition: 0.5s;
+.headline {
+  font-size: 4rem;
 }
-.center:hover {
-  transform: perspective(1000px) translate(-50%, -50%) skewY(0deg);
+.subheadline {
+  font-size: 1.2rem;
 }
-.center h1 span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  text-transform: uppercase;
-  font-size: 12rem;
-  transform-style: preserve-3d;
-  transition: 1%;
+.btn-container {
+  margin-top: 1.5em;
 }
-.center h1 span:nth-child(1) {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+.call-btn,
+.portfolio-btn {
+  padding: 1.2em;
+  font-size: 1rem;
 }
-.center h1 span:nth-child(2) {
-  color: #efeeef;
-  transform: translate(-50%, -50%) skewX(-60deg);
-  left: -38px;
-  -webkit-clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
-  clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+.logo-name {
+  font-family: "Tiny5", sans-serif;
 }
-.center h1 span:nth-child(3) {
-  transform: translate(-50%, -50%) skewX(0);
-  left: -76px;
-  -webkit-clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
-  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+.heading {
+  text-align: center;
 }
-.center:hover h1 span:nth-child(2) .center:hover h1 span:nth-child(2) {
-  transform: translate(-50%, -50%) skewX(0);
-  left: 0;
-  color: #fff;
+.paragraph {
+  font-size: 1.1rem;
+}
+.abt-container {
+  width: 50%;
+  height: 200px;
+  padding: 1.5em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5em auto;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import image from "../assets/hero-image.png";
 import Card from "./Card";
+import Button from "./Button";
 
 const Hero = () => {
   return (
@@ -13,6 +14,9 @@ const Hero = () => {
         backgroundSize: "cover",
       }}>
       <Card />
+      <div className="btn-container">
+        <Button />
+      </div>
     </div>
   );
 };
