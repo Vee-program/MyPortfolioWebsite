@@ -316,3 +316,18 @@ nav li:first-child {
   padding: 1.2rem;
   font-size: 1rem;
 }
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+}
+input {
+  width: 500px;
+  height: 40px;
+}
+textarea {
+  width: 500px;
+  height: 100px;
+}
