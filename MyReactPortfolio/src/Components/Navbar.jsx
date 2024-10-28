@@ -18,15 +18,18 @@ const Navbar = () => {
           <Link to="/about">
             <li className="list-item">ABOUT US</li>
           </Link>
-          <Link to="/projects">
+          <Link to="/portfolio">
             <li className="list-item">PORTFOLIO</li>
           </Link>
-          <Link to="/skills">
+          <Link to="/services">
             <li className="list-item">SERVICES</li>
           </Link>
           <Link to="/contact">
             <li>
-              <button className="contact-btn">Contact</button>
+              <button className="contact-btn">
+                <span>C</span>
+                <span>o</span>ntact
+              </button>
             </li>
           </Link>
         </ul>
