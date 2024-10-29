@@ -321,13 +321,36 @@ nav li:first-child {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2em;
+  margin: 2em;
+  font-size: 1.2rem;
+}
+.page-title {
+  font-size: 2rem;
+  font-weight: bold;
+  width: 150px;
+  border: 2px solid #004aad;
+  display: block;
+  margin: 2em auto;
+  text-align: center;
 }
 input {
   width: 500px;
   height: 40px;
+  padding-left: 1.2em;
+  font-size: 1.2rem;
+  font-family: "Roboto";
 }
 textarea {
   width: 500px;
   height: 100px;
+  padding: 1.2em;
+  font-size: 1.2rem;
+  font-family: "Roboto";
+}
+.contact-header,
+.contact-subheader {
+  text-align: center;
+}
+.contact-header {
+  margin-top: 2em;
 }
