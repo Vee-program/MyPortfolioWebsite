@@ -6,18 +6,7 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div className="about-page">
-      <div className="portfolio-image">
-        <img
-          src={image}
-          alt="a woman wearing a blue blazer"
-          className="profile-pic"
-        />
-        <img
-          src={snippet}
-          alt="snippet of a source code of one of our projects"
-          className="snippet-work"
-        />
-      </div>
+      <div className="page-title">About</div>
       <div className="big-container">
         <div className="abt-container">
           <h1 className="heading">About Us</h1>
@@ -72,6 +61,18 @@ const About = () => {
             to promoting inclusivity and innovation within the tech industry.
           </p>
         </div>
+      </div>
+      <div className="portfolio-image">
+        <img
+          src={image}
+          alt="a woman wearing a blue blazer"
+          className="profile-pic"
+        />
+        <img
+          src={snippet}
+          alt="snippet of a source code of one of our projects"
+          className="snippet-work"
+        />
       </div>
       <div className="impact-container">
         <p className="impact">
