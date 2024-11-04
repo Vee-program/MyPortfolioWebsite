@@ -5,12 +5,21 @@ import webdevelopment from "../assets/webdevelopment.png";
 import seo from "../assets/seo.png";
 import maintanance from "../assets/maintainance.png";
 import ecommerce from "../assets/e-commerce.png";
+import ServicesRequest from "./ServicesRequest";
 
 const Services = () => {
   return (
     <div className="main-container">
       <div className="page-title">Services</div>
       <div className="services-container">
+        <div className="serviceRequest-card">
+          <p className="serviceRequestText">
+            Looking to elevate your online presence ?
+          </p>
+          <Link to="/servicesrequest">
+            <button className="service-btn">Request a service</button>
+          </Link>
+        </div>
         <div className="services-grid">
           <div className="services">
             <h1 className="s-header">Web Design and Development</h1>

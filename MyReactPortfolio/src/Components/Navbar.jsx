@@ -24,6 +24,9 @@ const Navbar = () => {
           <Link to="/services">
             <li className="list-item">SERVICES</li>
           </Link>
+          <Link to="/feedbackrating">
+            <li className="list-item">FEEDBACK RATING</li>
+          </Link>
           <Link to="/contact">
             <li>
               <button className="contact-btn">
