@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import image1 from "../assets/logo.png";
-import image2 from "../assets/logo-name.png";
+import menu from "../assets/menu-icon.png.";
 
 const Navbar = () => {
   return (
@@ -27,6 +26,9 @@ const Navbar = () => {
           <Link to="/feedbackrating">
             <li className="list-item">FEEDBACK RATING</li>
           </Link>
+          <li>
+            <img src={menu} alt="hamburger icon" />
+          </li>
           <Link to="/contact">
             <li>
               <button className="contact-btn">

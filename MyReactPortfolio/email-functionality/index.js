@@ -72,7 +72,7 @@ app.post("/send-request", function (req, res) {
     ${req.body.requestForm.budget}
     ${req.body.requestForm.service}
     ${req.body.requestForm.webapplication}
-    ${req.body.requestForm.details}`,
+    ${req.body.requestForm.suggestion}`,
   };
   transporter.sendMail(mailOptions, function (err, data) {
     if (err) {
@@ -103,6 +103,29 @@ app.post("/send-request", function (req, res) {
         });
       }
     });
+  });
+});
+
+app.post("/send-feedback", function (req, res) {
+  let mailOptions = {
+    from: `${req.body.feedbackRating.email}`,
+    to: process.env.EMAIL,
+    subject: `Message from ${req.body.feedbackRating.email}`,
+    text: `${req.body.feedbackRating.rate}
+    ${req.body.feedbackRating.improve}
+    ${req.body.feedbackRating.details}
+    ${req.body.feedbackRating.email}`,
+  };
+  transporter.sendMail(mailOptions, function (err, data) {
+    if (err) {
+      res.json;
+      status: "fail";
+    } else {
+      console.log("== Feedback Sent ==");
+      res.json({
+        status: "success",
+      });
+    }
   });
 });
 

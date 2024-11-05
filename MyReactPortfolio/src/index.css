@@ -666,3 +666,6 @@ label {
     background-positon-x: 0px;
   }
 }
+
+@media (max-width: 768px) {
+}
