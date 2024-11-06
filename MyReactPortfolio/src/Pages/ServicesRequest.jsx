@@ -83,10 +83,12 @@ const ServicesRequest = () => {
           <input
             type="tel"
             className="service-input"
-            placeholder="Enter your contact"
+            placeholder="123-456-7890"
             name="phoneNumber"
             value={requestForm.phonenumber}
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             onChange={handleChange}
+            title="Format: 123-456-7890"
           />
           <br />
           <label>Budget range:</label>

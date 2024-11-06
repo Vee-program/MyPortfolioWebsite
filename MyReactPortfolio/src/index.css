@@ -61,6 +61,19 @@ nav li:first-child {
   font-size: 2rem;
   color: white;
 }
+.hamburger,
+.close-icon {
+  width: 30px;
+}
+.sidebar {
+  background-color: pink;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 40%;
+  padding: 1.1em;
+  background-color: #3633cdea;
+}
 .contact-btn {
   background-color: transparent;
   width: 100px;
@@ -154,6 +167,9 @@ nav li:first-child {
 .abt-container:hover {
   background-color: #3533cd;
   color: white;
+  .heading {
+    color: white;
+  }
 }
 .portfolio-image {
   margin-top: 2em;
@@ -181,7 +197,8 @@ nav li:first-child {
 .impact-container a {
   text-decoration: none;
 }
-.projects-page {
+.project-page {
+  background-color: white;
   width: 100%;
   padding-top: 2em;
 }
@@ -191,6 +208,7 @@ nav li:first-child {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-bottom: 15em;
   overflow: hidden;
 }
 .image-container {
@@ -208,6 +226,60 @@ nav li:first-child {
   align-items: center;
   justify-content: center;
 }
+.tracker-wrapper {
+  width: 80%;
+  max-inline-size: var(--size-content-3);
+  -webkit-mask: linear-gradient(
+        90deg,
+        transparent 0,
+        black 15% 85%,
+        transparent
+      )
+      0 50% / 100% calc(100% - (2 * var(--size-4))) no-repeat,
+    linear-gradient(0deg, black, black) 50% 0 / 100% var(--size-4) no-repeat,
+    linear-gradient(0deg, black, black) 50% 100% / 100% var(--size-4) no-repeat;
+}
+.tracker {
+  --size: clamp(200px, 40vmin, 50rem);
+  width: 100%;
+  display: flex;
+  gap: var(--size-4);
+  list-style-type: none;
+  overflow: overlay;
+  margin: 0;
+  /*background: hsl(0 0% 100% / 0.25);*/
+  padding: var(--size-4) 33%;
+  scroll-snap-type: x mandatory;
+  /* Circular inverted */
+  /* -webkit-mask-image: radial-gradient(ellipse at 50% 66%, black 0 30%, transparent 30%);
+	/* No Scrollbar */
+  /* -webkit-mask: radial-gradient(#0000 0 30%, #000 30%) 50% 20vmin / 240% 100%;*/
+  /* Winner */
+  /*-webkit-mask: radial-gradient(#0000 0 30%, #000 30%) 50% calc(var(--size) * 0.5) / 250% 100%,
+								linear-gradient(0deg, black, black) 50% 0 / 100% var(--size-4) no-repeat,
+								linear-gradient(0deg, black, black) 50% 100% / 100% var(--size-4) no-repeat;*/
+  -webkit-mask: radial-gradient(#0000 0 30%, #000 30.5%) 50%
+      calc(var(--size) * 0.5) / 300% 100%,
+    linear-gradient(0deg, black, black) 50% 0 / 100% var(--size-4) no-repeat,
+    linear-gradient(0deg, black, black) 50% 100% / 100% var(--size-4) no-repeat;
+}
+
+.track__item {
+  height: 100%;
+  aspect-ratio: 1;
+  background: transparent;
+  /*background: var(--surface-2);*/
+  scroll-snap-align: center;
+  /*display: none;*/
+}
+.tracker-item {
+  height: 100%;
+  aspect-ratio: 1;
+  background: transparent;
+  /*background: var(--surface-2);*/
+  scroll-snap-align: center;
+  /*display: none;*/
+}
 #img1,
 #img2,
 #img3,
@@ -218,13 +290,13 @@ nav li:first-child {
   border-radius: 20px;
 }
 .hover-img {
-  background-color: #000;
+  background-color: transparent;
   color: #fff;
   display: inline-block;
   margin: 8px;
+  overflow: hidden;
   max-width: 320px;
   min-width: 240px;
-  overflow: hidden;
   position: relative;
   text-align: center;
   width: 100%;
@@ -416,6 +488,7 @@ nav li:first-child {
   background: linear-gradient(90deg, #000000, #3533cd);
   padding-top: 3em;
   padding-bottom: 3em;
+  width: 100%;
 }
 .contact-container {
   display: flex;
@@ -496,7 +569,7 @@ label {
   gap: 10px;
 }
 .icon {
-  width: 100%;
+  width: 200px;
   border: 2px solid #3533cd;
   display: flex;
   justify-content: center;
@@ -504,6 +577,9 @@ label {
   flex-direction: column;
   padding: 1.5em;
   color: white;
+}
+.icon:hover {
+  background-color: #3533cd;
 }
 .icon-image {
   width: 100px;
@@ -667,5 +743,89 @@ label {
   }
 }
 
+@media (min-width: 770px) {
+  .hamburger {
+    display: none;
+  }
+}
 @media (max-width: 768px) {
+  .hideOnMobile {
+    display: none;
+  }
+  .feedback {
+    width: 85%;
+  }
+  .icon-container {
+    width: 90%;
+  }
+}
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+  }
+  .abt-container {
+    height: 450px;
+  }
+  .portfolio-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1.2em auto;
+    width: 100%;
+  }
+  .profile-pic,
+  .snippet-work {
+    width: 100%;
+  }
+  .services {
+    width: 95%;
+    height: 650px;
+  }
+  .serviceRequest-card {
+    width: 100%;
+  }
+  .feedback {
+    width: 100%;
+  }
+  .rating,
+  .rate-textarea {
+    width: 98%;
+  }
+  .contact-container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .contact-input,
+  .button,
+  .contact-textarea {
+    width: 95%;
+  }
+  .icon-container {
+    width: 50%;
+  }
+  .icon {
+    width: 100px;
+    height: 180px;
+  }
+  .icon-image {
+    width: 60px;
+  }
+  .contact-header {
+    font-size: 2rem;
+  }
+  .headline {
+    font-size: 3.5rem;
+  }
+  nav li:first-child {
+    margin-right: -16em;
+  }
+  .image-container {
+    width: 90%;
+    position: absolute;
+    left: 2%;
+  }
 }

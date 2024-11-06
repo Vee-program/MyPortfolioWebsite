@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -13,17 +14,17 @@ const Footer = () => {
         <ul class="social-icon">
           <li class="social-icon__item">
             <a class="social-icon__link" href="#">
-              <ion-icon name="logo-facebook"></ion-icon>
+              <ion-icon name="logo-whatsapp"></ion-icon>
+            </a>
+          </li>
+          <li class="social-icon__item">
+            <a class="social-icon__link" href="https://wa.me/0762730184">
+              <ion-icon name="logo-github"></ion-icon>
             </a>
           </li>
           <li class="social-icon__item">
             <a class="social-icon__link" href="#">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-          <li class="social-icon__item">
-            <a class="social-icon__link" href="#">
-              <ion-icon name="logo-linkedin"></ion-icon>
+              <ion-icon name="logo-tiktok"></ion-icon>
             </a>
           </li>
           <li class="social-icon__item">
@@ -34,29 +35,34 @@ const Footer = () => {
         </ul>
         <ul class="menu">
           <li class="menu__item">
-            <a class="menu__link" href="#">
+            <Link class="menu__link" to="/">
               Home
-            </a>
+            </Link>
           </li>
           <li class="menu__item">
-            <a class="menu__link" href="#">
-              About
-            </a>
+            <Link class="menu__link" to="/about">
+              About Us
+            </Link>
           </li>
           <li class="menu__item">
-            <a class="menu__link" href="#">
+            <Link class="menu__link" to="/portfolio">
+              Portfolio
+            </Link>
+          </li>
+          <li class="menu__item">
+            <Link class="menu__link" to="/services">
               Services
-            </a>
+            </Link>
           </li>
           <li class="menu__item">
-            <a class="menu__link" href="#">
-              Team
-            </a>
+            <Link class="menu__link" to="/feedbackrating">
+              Feedback Rating
+            </Link>
           </li>
           <li class="menu__item">
-            <a class="menu__link" href="#">
+            <Link class="menu__link" to="/contact">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
         <p>

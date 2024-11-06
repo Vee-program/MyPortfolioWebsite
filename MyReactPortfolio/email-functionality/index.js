@@ -25,6 +25,40 @@ transporter.verify((err, success) => {
 });
 
 app.post("/send", function (req, res) {
+  const htmlContent = `<div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+  <h2 style="text-align: center; color: #4CAF50;">Thank You for Reaching Out!</h2>
+
+  <p style="margin-bottom: 15px;">
+    Hi ${req.body.formData.name},
+  </p>
+
+  <p style="margin-bottom: 15px;">
+    Thank you for contacting us! We have received your message and appreciate you taking the time to reach out. Our team will review your inquiry and get back to you as soon as possible.
+  </p>
+
+  <p style="margin-bottom: 15px;">
+    Here's a summary of your message:
+  </p>
+
+  <div style="padding: 10px; background-color: #f9f9f9; border-radius: 5px;">
+    <p><strong>Name:</strong> ${req.body.formData.name}</p>
+    <p><strong>Email:</strong> ${req.body.formData.email}</p>
+    <p><strong>Subject:</strong> ${req.body.formData.subject}</p>
+    <p><strong>Message:</strong></p>
+    <p style="white-space: pre-wrap; padding: 10px; background-color: #fff; border: 1px solid #eee; border-radius: 5px;">${req.body.formData.message}</p>
+  </div>
+
+  <p style="margin-top: 20px;">
+    We'll be in touch soon. If you have any additional questions contact us at kriatestudios@yahoo.com
+  </p>
+
+  <p style="margin-top: 20px;">
+    Best regards,<br>
+    K.R.I.A.T.E Studios Team
+  </p>
+</div>
+`;
+
   let mailOptions = {
     from: `${req.body.formData.email}`,
     to: process.env.EMAIL,
@@ -45,8 +79,8 @@ app.post("/send", function (req, res) {
     let userMailOptions = {
       from: process.env.EMAIL,
       to: `${req.body.formData.email}`,
-      subject: "Thank you for contacting KRIATE Studios",
-      text: "Thank you for contacting us. We'll get back to you soon.",
+      subject: "Thank you for contacting K.R.I.A.T.E Studios",
+      html: htmlContent,
     };
 
     transporter.sendMail(userMailOptions, function (err, data) {
@@ -54,7 +88,7 @@ app.post("/send", function (req, res) {
         res.json;
         status: "fail";
       } else {
-        console.log("== Message Sent ==");
+        console.log("== Message Sent to User ==");
         res.json({
           status: "Auto-reply sent:" + data.response,
         });
@@ -64,6 +98,43 @@ app.post("/send", function (req, res) {
 });
 
 app.post("/send-request", function (req, res) {
+  const htmlEmail = `<div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+  <h2 style="text-align: center; color: #4CAF50;">Service Request Received</h2>
+
+  <p style="margin-bottom: 15px;">
+    Hi ${req.body.requestForm.name},
+  </p>
+
+  <p style="margin-bottom: 15px;">
+    Thank you for contacting us! We have received your service request and our team is reviewing it. You'll hear back from us as soon as possible.
+  </p>
+
+  <p style="margin-bottom: 15px;">
+    Here's a summary of your request:
+  </p>
+
+  <div style="padding: 10px; background-color: #f9f9f9; border-radius: 5px;">
+    <p><strong>Name:</strong> ${req.body.requestForm.name}</p>
+    <p><strong>Email:</strong> ${req.body.requestForm.email}</p>
+    <p><strong>Phone:</strong> ${req.body.requestForm.phonenumber}</p>
+     <p><strong>Budget:</strong> ${req.body.requestForm.budget}</p>
+     <p><strong>Project Timeline:</strong> ${req.body.requestForm.timeline}</p>
+      <p><strong>Type of service:</strong> ${req.body.requestForm.service}</p>
+       <p><strong>Type of Webapplication:</strong> ${req.body.requestForm.webapplication}}</p>
+    <p><strong>Message:</strong></p>
+    <p style="white-space: pre-wrap; padding: 10px; background-color: #fff; border: 1px solid #eee; border-radius: 5px;">${req.body.requestForm.details}</p>
+  </div>
+
+  <p style="margin-top: 20px;">
+    We'll be in touch soon. If you have any additional questions in the meantime, feel free to reply to this email or contact us at  kriatestudios@yahoo.com
+  </p>
+
+  <p style="margin-top: 20px;">
+    Best regards,<br>
+    K.R.I.A.T.E Studios Team
+  </p>
+</div>`;
+
   let mailOptions = {
     from: `${req.body.requestForm.email}`,
     to: process.env.EMAIL,
@@ -89,7 +160,7 @@ app.post("/send-request", function (req, res) {
       from: process.env.EMAIL,
       to: `${req.body.requestForm.email}`,
       subject: "Thank you for contacting KRIATE Studios",
-      text: `Hello ${req.body.requestForm.name} Thanks for reaching out. I am excited to hear more about your project and see how we can bring it to life.Let's schedule a time to chat about your vision!`,
+      html: htmlEmail,
     };
 
     transporter.sendMail(userMailOptions, function (err, data) {

@@ -100,20 +100,21 @@ const Contact = () => {
         </form>
       </div>
       <div className="icon-container">
+        <a href="https://wa.me/0762730184">
+          <div className="icon">
+            <p>Contact us:</p>
+            <img src={whatsapp} alt="whatsapp icon" className="icon-image" />
+          </div>
+        </a>
+        <a href="mailto:kriatestudios@yahoo.com">
+          <div className="icon">
+            <p>Contact us:</p>
+            <img src={email} alt="email icon" className="icon-image" />
+          </div>
+        </a>
         <div className="icon">
-          <img src={email} alt="email icon" className="icon-image" />
-          <p>Contact Us at:</p>
-          <a>kriatestudios@gmail.com</a>
-        </div>
-        <div className="icon">
-          <img src={whatsapp} alt="whatsapp icon" className="icon-image" />
-          <p>Contact us at:</p>
-          <a>079447689</a>
-        </div>
-        <div className="icon">
+          <p>Follow us on:</p>
           <img src={instagram} alt="instagram icon" className="icon-image" />
-          <p>Follow us at:</p>
-          <a>instagram.ig</a>
         </div>
       </div>
       <Footer />
