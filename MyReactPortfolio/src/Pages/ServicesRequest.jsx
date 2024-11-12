@@ -56,7 +56,7 @@ const ServicesRequest = () => {
       <div className="page-title-service">Service Request Form</div>
       <div className="servicerequest-form">
         <form onSubmit={handleSubmit}>
-          <label>Name:</label>
+          <label for="name">Name:</label>
           <br />
           <input
             type="text"
@@ -65,9 +65,10 @@ const ServicesRequest = () => {
             name="name"
             value={requestForm.name}
             onChange={handleChange}
+            id="name"
           />
           <br />
-          <label>Email:</label>
+          <label for="email">Email:</label>
           <br />
           <input
             type="email"
@@ -76,28 +77,29 @@ const ServicesRequest = () => {
             name="email"
             value={requestForm.email}
             onChange={handleChange}
+            id="email"
           />
           <br />
-          <label>Phone Number:</label>
+          <label for="number">Phone Number:</label>
           <br />
           <input
             type="tel"
             className="service-input"
+            name="phonenumber"
             placeholder="123-456-7890"
-            name="phoneNumber"
             value={requestForm.phonenumber}
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             onChange={handleChange}
-            title="Format: 123-456-7890"
+            id="number"
           />
           <br />
-          <label>Budget range:</label>
+          <label for="budget">Budget range:</label>
           <br />
           <select
             className="service-input"
             name="budget"
             value={requestForm.budget}
-            onChange={handleChange}>
+            onChange={handleChange}
+            id="budget">
             <option className="default-option">
               Please select your budget
             </option>
@@ -107,13 +109,14 @@ const ServicesRequest = () => {
             <option>R10000+</option>
           </select>
           <br />
-          <label>Choose Your Project Timeline:</label>
+          <label for="timeline">Choose Your Project Timeline:</label>
           <br />
           <select
             className="service-input"
-            name="service"
+            name="timeline"
             value={requestForm.timeline}
-            onChange={handleChange}>
+            onChange={handleChange}
+            id="timeline">
             <option>Please choose your project timeline</option>
             <option> 1 month - small projects</option>
             <option> 2 months - medium projects</option>
@@ -121,14 +124,14 @@ const ServicesRequest = () => {
             <option>4-6months - fully customized, large-scope projects</option>
           </select>
           <br />
-          <br />
-          <label>Type of service</label>
+          <label for="service">Type of service</label>
           <br />
           <select
             className="service-input"
             name="service"
             value={requestForm.service}
-            onChange={handleChange}>
+            onChange={handleChange}
+            id="service">
             <option className="default-option">
               Please select a type of service
             </option>
@@ -139,13 +142,14 @@ const ServicesRequest = () => {
             <option>SEO and content Optimization</option>
           </select>
           <br />
-          <label>If Web Application, Choose type:</label>
+          <label for="application">If Web Application, Choose type:</label>
           <br />
           <select
             className="service-input"
-            name="webApplication"
+            name="webapplication"
             value={requestForm.webapplication}
-            onChange={handleChange}>
+            onChange={handleChange}
+            id="application">
             <option className="default-option">
               Please select a type of web application
             </option>
@@ -158,13 +162,16 @@ const ServicesRequest = () => {
             <option>Online Polling or Survey</option>
           </select>
           <br />
-          <label>Project Details or any Specific requirements</label>
+          <label for="application">
+            Project Details or any Specific requirements
+          </label>
           <br />
           <textarea
             className="service-textarea"
             name="details"
             value={requestForm.details}
-            onChange={handleChange}></textarea>
+            onChange={handleChange}
+            id="application"></textarea>
           <br />
           <button className="servicerequest-btn">Get Started</button>
         </form>

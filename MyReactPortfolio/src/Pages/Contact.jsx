@@ -61,7 +61,7 @@ const Contact = () => {
           <label>Name</label>
           <br />
           <input
-            type="name"
+            type="text"
             className="contact-input"
             name="name"
             onChange={handleChange}
